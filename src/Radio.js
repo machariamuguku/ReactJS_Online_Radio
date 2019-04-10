@@ -3,6 +3,7 @@ import FilePlayer from 'react-player/lib/players/FilePlayer'
 
 import play from './resources/play.png'
 import pause from './resources/pause.png'
+
 class RadioPlayer extends Component {
 
     constructor(props) {
@@ -10,7 +11,7 @@ class RadioPlayer extends Component {
 
         this.state = {
             radioUrl: 'http://91.121.165.88:8116/stream',
-            playing: true,
+            playing: false,
             volume: 0.2,
             muted: false
         };
@@ -21,7 +22,7 @@ class RadioPlayer extends Component {
     }
 
     onPlay = () => {
-        console.log('onPlay')
+        console.log('Radio Playing')
         this.setState({ playing: true })
     }
     setVolume = e => {
@@ -40,6 +41,7 @@ class RadioPlayer extends Component {
 
         return (
             <div>
+
                 <label htmlFor='volume'>volume</label>
                 <input type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
                 <label>{(volume * 10).toFixed(1)}</label>
@@ -48,7 +50,7 @@ class RadioPlayer extends Component {
                 <h3> {playing ? 'HBR 103.5 is Playing!!!' : 'HBR 103.5 is Paused!!!'} </h3>
                 <button onClick={this.playPause}> <img src={playing ? pause : play} alt="pause" /> </button>
                 <FilePlayer
-                    fileConfig={{ forceAudio: true }}
+                    config={{ file: { forceAudio: true } }}
                     url={radioUrl}
                     playing={playing}
                     volume={volume}
