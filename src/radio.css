@@ -1,0 +1,21 @@
+.radio {
+    text-align: center;
+    /* background-color: #282c34; */
+    background:
+        linear-gradient(tomato, transparent),
+        linear-gradient(to top left, lime, transparent),
+        linear-gradient(to top right, blue, transparent);
+    background-blend-mode: screen;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.radio-link {
+    color: #61dafb;
+}

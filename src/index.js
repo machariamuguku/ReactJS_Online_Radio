@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
 import Radio from './Radio';
 import * as serviceWorker from './serviceWorker';
 
