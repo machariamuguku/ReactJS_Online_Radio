@@ -1,0 +1,57 @@
+<svg class="lds-spinner" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><g transform="rotate(0 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-2.042857142857143s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(25.714285714285715 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.885714285714286s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(51.42857142857143 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.7285714285714289s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(77.14285714285714 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.5714285714285714s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(102.85714285714286 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.4142857142857144s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(128.57142857142858 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.2571428571428573s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(154.28571428571428 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-1.1s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(180 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.942857142857143s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(205.71428571428572 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.7857142857142857s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(231.42857142857142 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.6285714285714287s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(257.14285714285717 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.4714285714285715s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(282.85714285714283 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.31428571428571433s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(308.57142857142856 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="-0.15714285714285717s" repeatCount="indefinite"></animate>
+  </rect>
+</g><g transform="rotate(334.2857142857143 50 50)">
+  <rect x="47.5" y="4" rx="9.5" ry="0.8" width="5" height="12" fill="#000000">
+    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="2.2s" begin="0s" repeatCount="indefinite"></animate>
+  </rect>
+</g></svg>

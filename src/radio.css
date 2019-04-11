@@ -1,12 +1,10 @@
 .radio {
     text-align: center;
-    /* background-color: #282c34; */
     background:
         linear-gradient(tomato, transparent),
         linear-gradient(to top left, lime, transparent),
         linear-gradient(to top right, blue, transparent);
     background-blend-mode: screen;
-
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,6 +14,28 @@
     color: white;
 }
 
+.allign-the-image-vertically {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.left-floater {
+    float: left;
+}
+
+.right-floater {
+    float: right;
+}
+
+.add-some-margin {
+    margin-right: 40px;
+}
+
+.add-top-margin {
+    margin-top: 40px;
+}
+
+/* 
 .radio-link {
     color: #61dafb;
-}
+} */
