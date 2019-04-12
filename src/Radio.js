@@ -28,6 +28,30 @@ class RadioPlayer extends Component {
         };
     };
 
+    handleKeyPress = (e) => {
+        if (e.keyCode === 77) {
+            this.setState({ muted: !this.state.muted })
+        } else if (e.keyCode === 80) {
+            this.setState({ playing: !this.state.playing })
+        } else if (e.keyCode === 39) {
+            if (this.state.volume < 0.9) {
+                this.setState({ volume: ((this.state.volume) + 0.1) });
+                if ((this.state.volume).toFixed(3) > 0.001) {
+                    this.setState({ muted: false })
+                }
+            }
+        } else if (e.keyCode === 37) {
+            if ((this.state.volume).toFixed(2) > 0.01) {
+                this.setState({ volume: (this.state.volume - 0.1) });
+
+                if ((this.state.volume).toFixed(3) < 0.001) {
+                    this.setState({ muted: true })
+                }
+            }
+        } else if(e.keyCode === 66){
+            this.setState({ buffering: !this.state.buffering });
+        }
+    }
     playPause = () => {
         this.setState({ playing: !this.state.playing })
     }
@@ -46,11 +70,21 @@ class RadioPlayer extends Component {
     setBuffer = () => {
         this.setState({ buffering: !this.state.buffering })
     }
+
+    componentDidMount() {
+        document.addEventListener('keydown', this.handleKeyPress);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleKeyPress);
+    }
+
     render() {
         const { radioUrl, playing, volume, muted, buffering } = this.state
         let radiostate;
         let showbufferingimg = false;
 
+        // handle playing, muted and buffering states
         if (playing && !muted) {
             if (buffering) {
                 radiostate = "should be Playing but it's Buffering";
@@ -70,6 +104,8 @@ class RadioPlayer extends Component {
         } else if (!playing && muted) {
             radiostate = "is Paused and Muted"
         }
+
+
 
         return (
             <div className="radio">
@@ -116,7 +152,7 @@ class RadioPlayer extends Component {
                 </div>
 
                 {/*The voice spectrum*/}
-                <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />
+               { showbufferingimg?  <img src={spectrumNone} alt="Voice spectrum" height="80px" width="800px" /> : <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />}
 
                 <FooterComponent />
             </div>
