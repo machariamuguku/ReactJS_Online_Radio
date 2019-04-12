@@ -14,6 +14,19 @@
     color: white;
 }
 
+.setlogo{
+position: fixed;
+top: 30px;
+}
+
+.hbr-title {
+    position: fixed;
+    left: 5px;
+    bottom: 20%;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
 .allign-the-image-vertically {
     padding-top: 15px;
     padding-left: 10px;
@@ -27,15 +40,31 @@
     float: right;
 }
 
-.add-some-margin {
+.add-right-margin {
     margin-right: 40px;
+}
+
+.add-left-margin {
+    margin-left: 5px;
 }
 
 .add-top-margin {
     margin-top: 40px;
 }
 
-/* 
 .radio-link {
-    color: #61dafb;
-} */
+    position: fixed;
+    bottom: 2%;
+}
+
+.radio-link,
+a {
+    color: #ffffff;
+    font-size: 8pt;
+    line-height: 0px
+}
+
+.radio-link .thisimg {
+    padding-top: 4px;
+    margin-right: 4px;
+}

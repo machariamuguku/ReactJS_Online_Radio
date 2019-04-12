@@ -10,7 +10,7 @@ import pausebtn from './resources/pause.svg'
 import logopic from './resources/logo.svg'
 import spectrumpic from './resources/spectrum.gif'
 import spectrumNone from './resources/spectrum-none.png'
-import volumebtn from './resources/volume.svg'
+// import volumebtn from './resources/volume.svg'
 import mutedbtn from './resources/mute.svg'
 import playingbtn from './resources/playing.svg'
 import bufferingpic from './resources/buffering.svg'
@@ -73,26 +73,26 @@ class RadioPlayer extends Component {
 
         return (
             <div className="radio">
+
+                <div className="hbr-title">
+                    <h5> Homeboyz 103.5 Knockoff Radio</h5>
+                </div>
+
                 {/* The logo */}
-
-                {/* <h2 className="h2-master"> Homeboyz 103.5 Knockoff Radio</h2> */}
-
-                <img src={logopic} alt="HBR 103.5 Knock Off Logo" height="140px" width="200px" />
+                <div className="setlogo">
+                    <img src={logopic} alt="HBR 103.5 Knock Off Logo" height="140px" width="200px" />
+                </div>
 
                 <div>
                     {/* Check state of 1.Playing, 2.Paused and 3.Buffering 4.Muted*/}
                     {/* {buffering ? <h3> HBR 103.5 is buffering!!!</h3> : <h3> HBR 103.5 is {playing ? ' Playing!!!' : 'Paused!!!'} </h3>} */}
-                    <h3 className="left-floater"> HBR 103.5 {radiostate}</h3>
+                    <h4 className="left-floater"> HBR 103.5 {radiostate}</h4>
 
                     {showbufferingimg ? <img className="right-floater allign-the-image-vertically" src={bufferingpic} alt="buffering" height="30px" width="30px" /> : ''}
                 </div>
 
-                <div>
-                    {/* Mute button */}
-                    <img className="left-floater add-some-margin" src={muted ? mutedbtn : playingbtn} alt="mute" height="40px" width="40px" onClick={this.toggleMuted} />
-                    {/* The Play/Pause ('button') image */}
-                    <img className="right-floater" src={playing ? pausebtn : playbtn} alt="pause" height="40px" width="40px" onClick={this.playPause} />
-                </div>
+                {/* The Play/Pause ('button') image */}
+                <img className="right-floater" src={playing ? pausebtn : playbtn} alt="pause" height="40px" width="40px" onClick={this.playPause} />
 
                 {/* The audio player */}
                 <FilePlayer
@@ -107,15 +107,16 @@ class RadioPlayer extends Component {
                     onError={e => console.log('onError', e)}
                 />
 
-                {/*The voice spectrum*/}
-                <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />
-
                 {/* the volume button */}
                 <div className="add-top-margin">
-                    <img className="left-floater" src={volumebtn} alt="volume button" height="25px" width="30px" />
-                    <input className="right-floater" type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
+                    {/* Mute button */}
+                    <img className="left-floater" src={muted ? mutedbtn : playingbtn} alt="volume button" height="25px" width="30px" onClick={this.toggleMuted} />
+                    <input className="left-floater" type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
+                    <label className="right-floater add-left-margin">{(volume * 10).toFixed(1)}</label>
                 </div>
-                <label>{(volume * 10).toFixed(1)}</label>
+
+                {/*The voice spectrum*/}
+                <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />
 
                 <FooterComponent />
             </div>
