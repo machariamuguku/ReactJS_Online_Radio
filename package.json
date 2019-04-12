@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@dschoon/react-waves": "^1.0.3",
+    "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-player": "^1.10.0",

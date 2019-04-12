@@ -68,3 +68,26 @@ a {
     padding-top: 4px;
     margin-right: 4px;
 }
+
+/* for the slider */
+input[type="range"]{
+    margin-top: 8px;
+    -webkit-appearance:none;
+    width:250px;
+    height:2px;
+    background: aqua;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    background: #434343;
+    position:relative;
+    border: 3px solid aquamarine;
+    z-index:3;
+    cursor: pointer;
+  }

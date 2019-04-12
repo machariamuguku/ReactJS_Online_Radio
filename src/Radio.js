@@ -20,7 +20,6 @@ class RadioPlayer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            radioUrl: 'http://91.121.165.88:8116/stream',
             playing: false,
             volume: 0.2,
             muted: false,
@@ -48,7 +47,7 @@ class RadioPlayer extends Component {
                     this.setState({ muted: true })
                 }
             }
-        } else if(e.keyCode === 66){
+        } else if (e.keyCode === 66) {
             this.setState({ buffering: !this.state.buffering });
         }
     }
@@ -68,7 +67,8 @@ class RadioPlayer extends Component {
         this.setState({ muted: !this.state.muted })
     }
     setBuffer = () => {
-        this.setState({ buffering: !this.state.buffering })
+        // this.setState({ buffering: true });
+        console.log("bufferring!!!");
     }
 
     componentDidMount() {
@@ -80,14 +80,16 @@ class RadioPlayer extends Component {
     }
 
     render() {
-        const { radioUrl, playing, volume, muted, buffering } = this.state
+        const radioUrl = 'http://91.121.165.88:8116/stream?1473424110680.mp3';
+        const { playing, volume, muted, buffering } = this.state
         let radiostate;
         let showbufferingimg = false;
+
 
         // handle playing, muted and buffering states
         if (playing && !muted) {
             if (buffering) {
-                radiostate = "should be Playing but it's Buffering";
+                radiostate = "is Playing but also Buffering";
                 showbufferingimg = true;
             } else {
                 radiostate = "is Playing"
@@ -102,7 +104,8 @@ class RadioPlayer extends Component {
         } else if (!playing && !muted) {
             radiostate = "is Paused"
         } else if (!playing && muted) {
-            radiostate = "is Paused and Muted"
+            radiostate = "is Paused and Muted";
+            showbufferingimg = true;
         }
 
 
@@ -111,17 +114,16 @@ class RadioPlayer extends Component {
             <div className="radio">
 
                 <div className="hbr-title">
-                    <h5> Homeboyz 103.5 Knockoff Radio</h5>
+                    <h5> Homeboyz 103.5 Knock-Off Radio</h5>
                 </div>
 
                 {/* The logo */}
                 <div className="setlogo">
-                    <img src={logopic} alt="HBR 103.5 Knock Off Logo" height="140px" width="200px" />
+                    <img src={logopic} alt="HBR 103.5 Knock-Off Logo" height="140px" width="200px" />
                 </div>
 
                 <div>
                     {/* Check state of 1.Playing, 2.Paused and 3.Buffering 4.Muted*/}
-                    {/* {buffering ? <h3> HBR 103.5 is buffering!!!</h3> : <h3> HBR 103.5 is {playing ? ' Playing!!!' : 'Paused!!!'} </h3>} */}
                     <h4 className="left-floater"> HBR 103.5 {radiostate}</h4>
 
                     {showbufferingimg ? <img className="right-floater allign-the-image-vertically" src={bufferingpic} alt="buffering" height="30px" width="30px" /> : ''}
@@ -139,20 +141,19 @@ class RadioPlayer extends Component {
                     muted={muted}
                     width='0'
                     height='0'
-                    onBuffer={this.setBuffer}
+                    onBuffer={this.setBuffer()}
                     onError={e => console.log('onError', e)}
                 />
 
-                {/* the volume button */}
+                {/* the volume and  Mute buttons */}
                 <div className="add-top-margin">
-                    {/* Mute button */}
                     <img className="left-floater" src={muted ? mutedbtn : playingbtn} alt="volume button" height="25px" width="30px" onClick={this.toggleMuted} />
-                    <input className="left-floater" type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
+                    <input className="left-floater e-range" type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
                     <label className="right-floater add-left-margin">{(volume * 10).toFixed(1)}</label>
                 </div>
 
                 {/*The voice spectrum*/}
-               { showbufferingimg?  <img src={spectrumNone} alt="Voice spectrum" height="80px" width="800px" /> : <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />}
+                {showbufferingimg ? <img src={spectrumNone} alt="Voice spectrum" height="100px" width="800px" /> : <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />}
 
                 <FooterComponent />
             </div>

@@ -1,73 +1,60 @@
+<!doctype html>
 <html>
 
+<head>
+  <title>Audio Buffer Display</title>
+  <script type="text/javascript">
+    // var audioContext = window.AudioContext || window.webkitAudioContext;
+    var audioContext = new webkitAudioContext();
+
+    function drawBuffer(width, height, context, buffer) {
+      var data = buffer.getChannelData(0);
+      var step = Math.ceil(data.length / width);
+      var amp = height / 2;
+      for (var i = 0; i < width; i++) {
+        var min = 1.0;
+        var max = -1.0;
+        for (var j = 0; j < step; j++) {
+          var datum = data[(i * step) + j];
+          if (datum < min)
+            min = datum;
+          if (datum > max)
+            max = datum;
+        }
+        context.fillRect(i, (1 + min) * amp, 1, Math.max(1, (max - min) * amp));
+      }
+    }
+
+    function initAudio() {
+      var audioRequest = new XMLHttpRequest();
+      audioRequest.open("GET", "sounds/fightclub.ogg", true);
+      audioRequest.responseType = "arraybuffer";
+      audioRequest.onload = function () {
+        audioContext.decodeAudioData(audioRequest.response,
+          function (buffer) {
+            var canvas = document.getElementById("view1");
+            drawBuffer(canvas.width, canvas.height, canvas.getContext('2d'), buffer);
+          });
+      }
+      audioRequest.send();
+    }
+
+    window.addEventListener('load', initAudio);
+  </script>
+  <style>
+    body {
+      font: 14pt Arial, sans-serif;
+      background: beige;
+    }
+
+    select {
+      font: 14pt Arial, sans-serif;
+    }
+  </style>
+</head>
+
 <body>
-<script>
-
-function njwanga() {
-
-const audioCtx = new AudioContext();
-audioCtx.crossOrigin = "anonymous";//important for CORS
-
-//Create audio source
-//Here, we use an audio file, but this could also be e.g. microphone input
-const audioEle = new Audio();
-audioEle.crossOrigin = "anonymous";//important for CORS
-
-audioEle.src = 'http://91.121.165.88:8116/stream';//insert file name here
-audioEle.autoplay = true;
-audioEle.preload = 'auto';
-const audioSourceNode = audioCtx.createMediaElementSource(audioEle);
-
-//Create analyser node
-const analyserNode = audioCtx.createAnalyser();
-analyserNode.fftSize = 256;
-const bufferLength = analyserNode.frequencyBinCount;
-const dataArray = new Float32Array(bufferLength);
-
-//Set up audio node network
-audioSourceNode.connect(analyserNode);
-analyserNode.connect(audioCtx.destination);
-
-//Create 2D canvas
-const canvas = document.createElement('canvas');
-canvas.style.position = 'absolute';
-canvas.style.top = 0;
-canvas.style.left = 0;
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-document.body.appendChild(canvas);
-const canvasCtx = canvas.getContext('2d');
-canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-
-
-function draw() {
-  //Schedule next redraw
-  requestAnimationFrame(draw);
-
-  //Get spectrum data
-  analyserNode.getFloatFrequencyData(dataArray);
-
-  //Draw black background
-  canvasCtx.fillStyle = 'rgb(0, 0, 0)';
-  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-
-  //Draw spectrum
-  const barWidth = (canvas.width / bufferLength) * 2.5;
-  let posX = 0;
-  for (let i = 0; i < bufferLength; i++) {
-    const barHeight = (dataArray[i] + 140) * 2;
-    canvasCtx.fillStyle = 'rgb(' + Math.floor(barHeight + 100) + ', 50, 50)';
-    canvasCtx.fillRect(posX, canvas.height - barHeight / 2, barWidth, barHeight / 2);
-    posX += barWidth + 1;
-  }
-};
-
-draw();
-  }
-
-</script>
-<button onclick="njwanga();"> click me!!</button>
-Atleast show something!
+  <canvas id="view1" width="750" height="200"></canvas>
 </body>
 
 </html>
