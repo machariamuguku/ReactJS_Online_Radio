@@ -23,7 +23,7 @@ class RadioPlayer extends Component {
             playing: false,
             volume: 0.2,
             muted: false,
-            buffering: false
+            buffering: false,
         };
     };
 
@@ -116,22 +116,25 @@ class RadioPlayer extends Component {
                     <h5> Homeboyz 103.5 Knock-Off Radio</h5>
                 </div>
 
+                {/* the keyboard shortcuts component */}
+                <Shortcuts />
+
                 {/* The logo */}
                 <div className="setlogo">
                     <img src={logopic} alt="HBR 103.5 Knock-Off Logo" height="140px" width="200px" />
-                </div>
-
-                <Shortcuts />
-
-                <div>
+               
+                    <div>
                     {/* Check state of 1.Playing, 2.Paused and 3.Buffering 4.Muted*/}
                     <h4 className="left-floater"> HBR 103.5 {radiostate}</h4>
 
                     {showbufferingimg ? <img className="right-floater allign-the-image-vertically" src={bufferingpic} alt="buffering" height="30px" width="30px" /> : ''}
                 </div>
+                </div>
+
+
 
                 {/* The Play/Pause ('button') image */}
-                <img className="right-floater" src={playing ? pausebtn : playbtn} alt="pause" height="80px" width="80px" onClick={this.playPause} />
+                <img className="right-floater cursor-to-hand" src={playing ? pausebtn : playbtn} alt="pause" height="50px" width="50px" onClick={this.playPause} />
 
                 {/* The audio player */}
                 <FilePlayer
@@ -148,14 +151,15 @@ class RadioPlayer extends Component {
 
                 {/* the volume and  Mute buttons */}
                 <div className="add-top-margin">
-                    <img className="left-floater" src={muted ? mutedbtn : playingbtn} alt="volume button" height="25px" width="30px" onClick={this.toggleMuted} />
+                    <img className="left-floater cursor-to-hand" src={muted ? mutedbtn : playingbtn} alt="volume button" height="25px" width="30px" onClick={this.toggleMuted} />
                     <input className="left-floater e-range" type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
                     <label className="right-floater add-left-margin">{(volume * 10).toFixed(1)}</label>
                 </div>
 
                 {/*The voice spectrum*/}
-                {showbufferingimg ? <img src={spectrumNone} alt="Voice spectrum" height="100px" width="800px" /> : <img src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />}
+                {showbufferingimg ? <img className="cheza-chini" src={spectrumNone} alt="Voice spectrum" height="100px" width="800px" /> : <img className="cheza-chini" src={playing ? spectrumpic : spectrumNone} alt="Voice spectrum" height="80px" width="800px" />}
 
+                {/* the footer component */}
                 <FooterComponent />
             </div>
         )

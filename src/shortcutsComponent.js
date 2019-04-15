@@ -1,27 +1,32 @@
 import React, { Component } from 'react'
 
-export default class Shortcuts extends Component {
+import expand from './resources/expand.svg'
+import close from './resources/close.svg'
 
+export default class Shortcuts extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            showcallout: false
-        }
-    }
+            showcallout: true
+        };
+    };
 
+    toogleExpand = () => {
+        this.setState({ showcallout: !this.state.showcallout })
+
+    }
     render() {
         const { showcallout } = this.state
         return (
             <div className="callout">
-                <div className="callout-header">Keyboard Controls</div>
+                <div className="callout-header" onClick={this.toogleExpand}> <span> Keyboard Controls </span> <img className="allign-toogle-image-vertically" src={showcallout ? close : expand} alt="expand" height="22px" width="22px" /> </div>
                 {showcallout ?
-                    <div className="callout-container">
-                        <p>'>' Volume Up</p>
-                        <p>'>' Volume Down</p>
-                        <p>'P' Play/Pause</p>
-                        <p>'M' Mute</p>
-                        <p>'B' simulate Buffer</p>
+                    <div className="speech-bubble callout-container">
+                         <p><span>Right arrow key </span> - Volume Up</p>
+                        <p><span>Left arrow key </span> - Volume Down</p>
+                        <p><span>P </span> - Play/Pause</p>
+                        <p><span>M </span> - Mute</p>
+                        <p><span>B </span> - simulate Buffer</p>
                     </div>
                     : ''}
             </div>
