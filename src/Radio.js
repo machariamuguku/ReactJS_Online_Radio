@@ -134,7 +134,7 @@ class RadioPlayer extends Component {
 
 
                 {/* The Play/Pause ('button') image */}
-                <img className="right-floater cursor-to-hand" src={playing ? pausebtn : playbtn} alt="pause" height="50px" width="50px" onClick={this.playPause} />
+                <img className="add-some-weight right-floater cursor-to-hand" src={playing ? pausebtn : playbtn} alt="pause" height="50px" width="50px" onClick={this.playPause} />
 
                 {/* The audio player */}
                 <FilePlayer
@@ -165,5 +165,6 @@ class RadioPlayer extends Component {
         )
     }
 }
+
 
 export default RadioPlayer

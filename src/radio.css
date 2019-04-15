@@ -75,7 +75,7 @@ a {
 input[type="range"] {
     margin-top: 7px;
     -webkit-appearance: none;
-    width: 300px;
+    width: 200px;
     height: 4px;
     background: #3498db;
     background-position: center;
@@ -181,4 +181,7 @@ input[type="range"]::-webkit-slider-thumb {
 .cheza-chini {
     position: fixed;
     bottom: 15%;
+}
+.add-some-weight{
+margin-top: 130px;
 }
