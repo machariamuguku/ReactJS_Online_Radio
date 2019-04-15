@@ -6,7 +6,7 @@ export default class footerComponent extends Component {
     render() {
         return (
             <div className="radio-link">
-                <a href="http://www.muguku.co.ke/" rel="noopener">
+                <a href="http://www.muguku.co.ke/" rel="noopener noreferrer" target="_blank">
                     <h2> muguku.co.ke </h2>
                 </a>
                 <span>
