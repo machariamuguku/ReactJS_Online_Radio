@@ -14,84 +14,22 @@
     color: white;
 }
 
-.setlogo {
-    position: fixed;
-    top: 30px;
-}
-
 .hbr-title {
     position: fixed;
     left: 5px;
-    bottom: 20%;
+    top: 66%;
     transform: rotate(-90deg);
     transform-origin: top left;
+    font-size: 17pt;
 }
 
-.allign-the-image-vertically {
-    padding-top: 15px;
-    padding-left: 10px;
-}
-
-.left-floater {
-    float: left;
+.set-logo-image-dimensions {
+    height: 140px;
+    width: 160px;
 }
 
 .right-floater {
     float: right;
-}
-
-.add-right-margin {
-    margin-right: 40px;
-}
-
-.add-left-margin {
-    margin-left: 15px;
-    font-size: 12pt;
-    color: #e74c3c;
-}
-
-.add-top-margin {
-    margin-top: 40px;
-}
-
-.radio-link {
-    position: fixed;
-    bottom: 2%;
-}
-
-.radio-link,
-a {
-    color: #ffffff;
-    font-size: 8pt;
-    line-height: 0px
-}
-
-.radio-link .thisimg {
-    padding-top: 4px;
-    margin-right: 4px;
-}
-
-/* for the slider */
-input[type="range"] {
-    margin-top: 7px;
-    -webkit-appearance: none;
-    width: 200px;
-    height: 4px;
-    background: #3498db;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background: #34495e;
-    position: relative;
-    border: 3px solid #e74c3c;
-    z-index: 3;
-    cursor: pointer;
 }
 
 /* For the shortcuts component */
@@ -107,81 +45,178 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 8px 8px 8px 8px;
     background: #fff;
     color: #3273dc;
-    cursor: pointer; 
+    cursor: pointer;
     border-radius: 12px;
     margin-bottom: 26px;
     width: 240px;
 }
 
-.callout-header span{
+.callout-header span {
     font-size: 12pt;
+}
+
+.callout-header-image-dimensions {
+    height: 22px;
+    width: 22px;
 }
 
 .callout-container {
     /* top right bottom left */
     padding: 8px 8px 8px 8px;
-    background-color: #f0f0f0f0;
     color: white;
     font-size: 12pt;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+.speech-bubble {
+    position: relative;
+    background: #00aabb;
+    border-radius: .4em;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: #00aabb;
+    border-top: 0;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+
 .callout-container p {
     text-align: left;
     padding-left: 10px;
-    padding-right: 10px;
     font-size: 12pt;
     line-height: 12px;
 }
 
 .callout-container span {
- color: black;
+    color: black;
 }
 
-.closebtn {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    color: white;
-    font-size: 12pt;
+.play-pause-img-dimensions {
+    height: 50px;
+    width: 50px;
+}
+
+.add-some-margin {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cursor-to-hand {
     cursor: pointer;
 }
 
-.closebtn:hover {
-    color: lightgrey;
+.mute-btn-dimensions {
+    height: 25px;
+    width: 30px;
 }
 
-.cursor-to-hand{
+/* for the slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 4px;
+    background: #3498db;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-10px);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #34495e;
+    position: relative;
+    border: 3px solid #e74c3c;
+    z-index: 3;
     cursor: pointer;
 }
 
-.speech-bubble {
-	position: relative;
-	background: #00aabb;
-	border-radius: .4em;
+.add-left-margin {
+    /* margin-left: 2px; */
+    font-size: 16pt;
+    color: #e74c3c;
 }
 
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-bottom-color: #00aabb;
-	border-top: 0;
-	margin-left: -20px;
-	margin-top: -20px;
+.spectrum-img-dimensions {
+    height: 80px;
+    width: 65%;
 }
-.allign-toogle-image-vertically {
-    padding-top: 5px;
-    padding-left: 6px;
+
+.radio-link {
+    margin-top: 50px;
 }
-.cheza-chini {
-    position: fixed;
-    bottom: 15%;
+
+.radio-link,
+a {
+    color: #ffffff;
+    font-size: 8pt;
+    line-height: 0px
 }
-.add-some-weight{
-margin-top: 130px;
+
+.radio-link-img-dimensions {
+    height: 20px;
+    width: 20px;
+}
+
+.thisimg {
+    padding-top: 4px;
+    margin-right: 2px;
+}
+
+/* For mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .hbr-title {
+        top: 60%;
+        font-size: 12pt;
+        left: -5px;
+    }
+
+    .set-image-dimensions {
+        height: 100px;
+        width: 160px;
+    }
+
+    /* For the shortcuts component */
+    .callout {
+        position: static;
+    }
+
+    .callout-header {
+        /* top right bottom left */
+        padding: 5px 5px 5px 5px;
+    }
+
+    .callout-header-image-dimensions {
+        height: 20px;
+        width: 20px;
+    }
+
+    .callout-container {
+        /* top right bottom left */
+        padding: 5px 5px 5px 5px;
+    }
+
+    .spectrum-img-dimensions {
+        height: 45px;
+        width: 90%;
+    }
+
+    .radio-link {
+        margin-top: 20px;
+    }
+
+    input[type="range"] {
+        width: 180px;
+    }
 }

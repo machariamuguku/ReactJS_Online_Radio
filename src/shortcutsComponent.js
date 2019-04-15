@@ -15,14 +15,30 @@ export default class Shortcuts extends Component {
         this.setState({ showcallout: !this.state.showcallout })
 
     }
+
+    checkIfMobile = () => {
+        const isMobile = window.innerWidth <= 500;
+        if (isMobile) {
+            this.toogleExpand();
+        }
+    }
+
+    componentDidMount() {
+        this.checkIfMobile();
+    }
+
+
     render() {
         const { showcallout } = this.state
         return (
             <div className="callout">
-                <div className="callout-header" onClick={this.toogleExpand}> <span> Keyboard Controls </span> <img className="allign-toogle-image-vertically" src={showcallout ? close : expand} alt="expand" height="22px" width="22px" /> </div>
+                <div className="callout-header" onClick={this.toogleExpand}>
+                    <span> Keyboard Controls </span>
+                    <img className="callout-header-image-dimensions" src={showcallout ? close : expand} alt="expand" />
+                </div>
                 {showcallout ?
                     <div className="speech-bubble callout-container">
-                         <p><span>Right arrow key </span> - Volume Up</p>
+                        <p><span>Right arrow key </span> - Volume Up</p>
                         <p><span>Left arrow key </span> - Volume Down</p>
                         <p><span>P </span> - Play/Pause</p>
                         <p><span>M </span> - Mute</p>

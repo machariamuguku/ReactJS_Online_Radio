@@ -10,10 +10,9 @@ export default class footerComponent extends Component {
                     <h2> muguku.co.ke </h2>
                 </a>
                 <span>
-                    <img className="thisimg left-floater" src={copyright} height="20px" width="20px" alt="copyright" />
+                    <img className="radio-link-img-dimensions thisimg" src={copyright} alt="copyright" />
                     <h2 className="right-floater"> {new Date().getFullYear()}, {'\u00A0'} All rights reserved </h2>
                 </span>
-
             </div>
         )
     }
