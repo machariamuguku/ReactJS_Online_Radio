@@ -11,7 +11,7 @@ export default class footerComponent extends Component {
                 </a>
                 <span>
                     <img className="thisimg left-floater" src={copyright} height="20px" width="20px" alt="copyright" />
-                    <h2 className="right-floater"> {new Date().getFullYear()}, All rights reserved </h2>
+                    <h2 className="right-floater"> {new Date().getFullYear()}, {'\u00A0'} All rights reserved </h2>
                 </span>
 
             </div>

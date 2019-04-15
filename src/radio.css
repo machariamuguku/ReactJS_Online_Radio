@@ -14,9 +14,9 @@
     color: white;
 }
 
-.setlogo{
-position: fixed;
-top: 30px;
+.setlogo {
+    position: fixed;
+    top: 30px;
 }
 
 .hbr-title {
@@ -45,7 +45,9 @@ top: 30px;
 }
 
 .add-left-margin {
-    margin-left: 5px;
+    margin-left: 15px;
+    font-size: 12pt;
+    color: #e74c3c;
 }
 
 .add-top-margin {
@@ -70,24 +72,60 @@ a {
 }
 
 /* for the slider */
-input[type="range"]{
-    margin-top: 8px;
-    -webkit-appearance:none;
-    width:250px;
-    height:2px;
-    background: aqua;
-    background-position:center;
-    background-repeat:no-repeat;
-  }
-  
-  input[type="range"]::-webkit-slider-thumb{
-    -webkit-appearance:none;
-    width:20px;
-    height:20px;
+input[type="range"] {
+    margin-top: 7px;
+    -webkit-appearance: none;
+    width: 250px;
+    height: 4px;
+    background: #3498db;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
-    background: #434343;
-    position:relative;
-    border: 3px solid aquamarine;
-    z-index:3;
+    background: #34495e;
+    position: relative;
+    border: 3px solid #e74c3c;
+    z-index: 3;
     cursor: pointer;
-  }
+}
+
+/* For the shortcuts component */
+.callout {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    /* max-width: 260px; */
+}
+
+.callout-header {
+    padding: 10px 10px;
+    background: #d1ccc0;
+    font-size: 14pt;
+    color: white;
+}
+
+.callout-container {
+    /* top right bottom left */
+    padding: 2px 2px 2px 2px;
+    background-color: #f0f0f0f0;
+    color: black;
+    font-size: 12pt;
+}
+
+.closebtn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: lightgrey;
+}

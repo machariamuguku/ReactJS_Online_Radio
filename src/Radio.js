@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FilePlayer from 'react-player/lib/players/FilePlayer'
 
 import FooterComponent from './footerComponent'
+import Shortcuts from './shortcutsComponent'
 
 import './radio.css';
 
@@ -10,7 +11,6 @@ import pausebtn from './resources/pause.svg'
 import logopic from './resources/logo.svg'
 import spectrumpic from './resources/spectrum.gif'
 import spectrumNone from './resources/spectrum-none.png'
-// import volumebtn from './resources/volume.svg'
 import mutedbtn from './resources/mute.svg'
 import playingbtn from './resources/playing.svg'
 import bufferingpic from './resources/buffering.svg'
@@ -40,10 +40,10 @@ class RadioPlayer extends Component {
                 }
             }
         } else if (e.keyCode === 37) {
-            if ((this.state.volume).toFixed(2) > 0.01) {
+            if ((this.state.volume).toFixed(2) > 0.09) {
                 this.setState({ volume: (this.state.volume - 0.1) });
 
-                if ((this.state.volume).toFixed(3) < 0.001) {
+                if ((this.state.volume).toFixed(2) < 0.10) {
                     this.setState({ muted: true })
                 }
             }
@@ -59,7 +59,7 @@ class RadioPlayer extends Component {
         this.setState({ volume: parseFloat(e.target.value) });
         if (parseFloat(e.target.value) === 0) {
             this.setState({ muted: true })
-        } else {
+        } else if (parseFloat(e.target.value) > 0) {
             this.setState({ muted: false })
         };
     }
@@ -105,7 +105,6 @@ class RadioPlayer extends Component {
             radiostate = "is Paused"
         } else if (!playing && muted) {
             radiostate = "is Paused and Muted";
-            showbufferingimg = true;
         }
 
 
@@ -122,6 +121,8 @@ class RadioPlayer extends Component {
                     <img src={logopic} alt="HBR 103.5 Knock-Off Logo" height="140px" width="200px" />
                 </div>
 
+                <Shortcuts />
+
                 <div>
                     {/* Check state of 1.Playing, 2.Paused and 3.Buffering 4.Muted*/}
                     <h4 className="left-floater"> HBR 103.5 {radiostate}</h4>
@@ -130,7 +131,7 @@ class RadioPlayer extends Component {
                 </div>
 
                 {/* The Play/Pause ('button') image */}
-                <img className="right-floater" src={playing ? pausebtn : playbtn} alt="pause" height="40px" width="40px" onClick={this.playPause} />
+                <img className="right-floater" src={playing ? pausebtn : playbtn} alt="pause" height="80px" width="80px" onClick={this.playPause} />
 
                 {/* The audio player */}
                 <FilePlayer
