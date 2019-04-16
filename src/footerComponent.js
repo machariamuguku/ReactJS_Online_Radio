@@ -7,7 +7,7 @@ export default class footerComponent extends Component {
         return (
             <div className="radio-link">
                 <a href="http://www.muguku.co.ke/" rel="noopener noreferrer" target="_blank">
-                    <h2> muguku.co.ke </h2>
+                    <h2> www.muguku.co.ke </h2>
                 </a>
                 <span>
                     <img className="radio-link-img-dimensions thisimg" src={copyright} alt="copyright" />
