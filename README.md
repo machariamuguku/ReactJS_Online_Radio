@@ -1,4 +1,4 @@
-# ReactjS Online radio player for Homeboyz Radio (hbr 103.5)
+# Reactjs online radio player for Homeboyz Radio (hbr 103.5)
 
 A ReactjS Online radio station for my favorite Kenyan radio station Homeboyz Radio (hbr 103.5).
 
