@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ReactjS Online radio player for Homeboyz Radio (hbr 103.5)
 
-## Available Scripts
+A ReactjS Online radio station for my favorite Kenyan radio station Homeboyz Radio (hbr 103.5).
 
-In the project directory, you can run:
+## Demo Site
 
-### `npm start`
+[homeboyz.herokuapp.com](http://homeboyz.herokuapp.com).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## N/B
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. Web Audio Api doesn't play nice with mobile browsers.
+2. That being said though, i optimized the site for mobile.
+3. I tested it on chrome for android and it works.
+4. You can control the site with the mouse or the keyboard
 
-### `npm test`
+## The technology stack
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Reactjs, Heroku Cli, Sass, Web Audio API and an npm module called React Player.
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Landing Page
+   ![picture alt](./src/resources/screenshots/hbr_landing_page.png "hbr_landing_page")
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+2. HBR Playing
+   ![picture alt](./src/resources/screenshots/hbr_playing.png "hbr_playing")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. HBR Muted
+   ![picture alt](./src/resources/screenshots/hbr_muted.png "hbr_muted")
 
-### `npm run eject`
+4. HBR Buffering
+![picture alt](./src/resources/screenshots/hbr_buffering.png "hbr_buffering")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[GNU - gpl-3.0](https://choosealicense.com/licenses/gpl-3.0/)
