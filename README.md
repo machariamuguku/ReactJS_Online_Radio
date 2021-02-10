@@ -8,6 +8,7 @@ A ReactjS Online radio station for my favorite Kenyan radio station Homeboyz Rad
 
 ## N/B
 
+0. [Linked-in post with Video Preview and Project Motivation](https://www.linkedin.com/posts/machariamuguku_reactjs-npm-100daysofcode-activity-6523852154598354944-WpOr)
 1. Web Audio Api doesn't play nice with mobile browsers.
 2. That being said though, i optimized the site for mobile.
 3. I tested it on chrome for android and it works.
@@ -29,7 +30,7 @@ Reactjs, Heroku Cli, Sass, Web Audio API and an npm module called React Player.
    ![picture alt](./src/resources/screenshots/hbr_muted.png "hbr_muted")
 
 4. HBR Buffering
-![picture alt](./src/resources/screenshots/hbr_buffering.png "hbr_buffering")
+   ![picture alt](./src/resources/screenshots/hbr_buffering.png "hbr_buffering")
 
 ## Contributing
 
