@@ -80,7 +80,7 @@ class RadioPlayer extends Component {
     }
 
     render() {
-        const radioUrl = 'http://91.121.165.88:8116/stream?1473424110680.mp3';
+        const radioUrl = process.env.REACT_APP_HBR_LIVESTREAM_LINK;
         const { playing, volume, muted, buffering } = this.state
         let radiostate;
         let showbufferingimg = false;
