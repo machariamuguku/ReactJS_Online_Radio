@@ -1,3 +1,19 @@
+# N/B: THIS REPO IS ARCHIVED
+
+## Archive Notes
+
+1. Don't judge me too harshly on this; It was my very first react project 😀
+2. What I'd do differently today:
+   - Typescript!
+   - React Hooks
+   - A tiny nodejs backend to obfuscate the stream endpoint. That or server side rendering
+   - Some sort of a cache to enable a small rewind-forward capability (mp3 binary in redis? 🤷🏿‍♂️)
+   - Actual sound wave bar graph (circular sound wave?) preferably in WASM. See [this](https://www.linkedin.com/posts/machariamuguku_webaudio-javascript-activity-6690955692611772416-ZGS0)
+3. Might revisit this in the future
+
+---
+<br />
+
 # Reactjs online radio player for Homeboyz Radio (hbr 103.5)
 
 A ReactjS Online radio station for my favorite Kenyan radio station Homeboyz Radio (hbr 103.5).
