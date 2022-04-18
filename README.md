@@ -13,6 +13,8 @@ A ReactjS Online radio station for my favorite Kenyan radio station Homeboyz Rad
 2. That being said though, i optimized the site for mobile.
 3. I tested it on chrome for android and it works.
 4. You can control the site with the mouse or the keyboard
+5. Add a .env file in the structure of .env.sample (or rename sample and fill in the blanks).
+6. Recommended places to scrap for the url: [hbr tunein site](https://tunein.com/radio/Homeboyz-Radio-1035-s78058/) or [hbr online player](http://www.hbr.co.ke)
 
 ## The technology stack
 
